@@ -1,3 +1,5 @@
+<center><img src="https://user-images.githubusercontent.com/91099049/163016755-a4aaeb38-f412-44cb-bb21-02256b12f9ac.gif"/></center>
+
 Yu-Gi-Oh! Card Search Engine
 ======
 
