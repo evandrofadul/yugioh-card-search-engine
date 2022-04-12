@@ -21,7 +21,7 @@
 </head>
 <body>
     <div class="container-xxl">
-        <a href="http://localhost/"><img src="assets/images/logo.svg" class="mx-auto d-block" style="padding: 4% 0 30px"/></a>
+        <a href="https://yugioh-card-search-engine.herokuapp.com/"><img src="assets/images/logo.svg" class="mx-auto d-block" style="padding: 4% 0 30px"/></a>
 
         <!-- BOTÃO PARA GERAR CARTAS ALEATÓRIAS
         <div class="d-grid col-1 mx-auto">
