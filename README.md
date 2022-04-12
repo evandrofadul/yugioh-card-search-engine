@@ -9,5 +9,5 @@ Buscador de cartas de Yu-Gi-Oh, os resultados são apresentados em PT-BR. Alguma
 - jQuery
 
 ---
-Database - [YGOPRODECK](https://db.ygoprodeck.com/)
-Autocomplete - [jQuery.Flexdatalist](https://github.com/sergiodlopes/jquery-flexdatalist/)
+-Database - [YGOPRODECK](https://db.ygoprodeck.com/)
+-Autocomplete - [jQuery.Flexdatalist](https://github.com/sergiodlopes/jquery-flexdatalist/)
