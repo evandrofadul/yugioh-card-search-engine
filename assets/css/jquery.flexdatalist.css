@@ -1,0 +1,154 @@
+/**
+ * jQuery Flexdatalist basic stylesheet.
+ *
+ * Version:
+ * 2.3.1
+ *
+ * Github:
+ * https://github.com/sergiodlopes/jquery-flexdatalist/
+ *
+ */
+ .flexdatalist-results {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #a9bdbd;
+    z-index: 100000;
+    max-height: 45%;
+    overflow-y: auto;
+    color: #333;
+    list-style: none;
+    margin: -4px 0;
+    padding: 0;
+    cursor: pointer;
+}
+.flexdatalist-results li {
+    border-bottom: 1px solid #839496;
+    padding: 8px 15px;
+    font-size: 14px;
+    line-height: 20px;
+}
+.flexdatalist-results li:hover {
+    background: #839496;
+    padding: 8px 15px;
+    font-size: 14px;
+    line-height: 20px;
+}
+.flexdatalist-results li span.highlight {
+    font-weight: 700;
+    text-decoration: underline;
+}
+.flexdatalist-results li.active {
+    background: #b98f0d;
+    color: #fff;
+    border: 1px;
+}
+.flexdatalist-results li.no-results {
+    font-style: italic;
+    color: #333;
+}
+
+/**
+ * Grouped items
+ */
+.flexdatalist-results li.group {
+    background: #F3F3F4;
+    color: #666;
+    padding: 8px 8px;
+}
+.flexdatalist-results li .group-name {
+    font-weight: 700;
+}
+.flexdatalist-results li .group-item-count {
+    font-size: 85%;
+    color: #777;
+    display: inline-block;
+    padding-left: 10px;
+}
+
+/**
+ * Multiple items
+ */
+.flexdatalist-multiple:before {
+    content: '';
+    display: block;
+    clear: both;
+}
+.flexdatalist-multiple {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: left;
+    cursor: text;
+}
+.flexdatalist-multiple.disabled {
+    background-color: #eee;
+    cursor: default;
+}
+.flexdatalist-multiple:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.flexdatalist-multiple li {
+    display: inline-block;
+    position: relative;
+    margin: 5px;
+}
+.flexdatalist-multiple li.input-container,
+.flexdatalist-multiple li.input-container input {
+    border: none;
+    height: auto;
+    padding: 0 0 0 4px;
+    line-height: 24px;
+    box-shadow: none;
+}
+
+.flexdatalist-multiple li.value {
+    padding: 2px 25px 2px 7px;
+    background: #efefef;
+    border-radius: 3px;
+    color: #444;
+    line-height: 20px;
+    float: left;
+}
+.flexdatalist-multiple li.toggle {
+    cursor: pointer;
+    transition: opacity ease-in-out 300ms;
+}
+.flexdatalist-multiple li.toggle.disabled {
+    text-decoration: line-through;
+    opacity: 0.80;
+}
+
+.flexdatalist-multiple li.value span.fdl-remove {
+    font-weight: 700;
+    padding: 2px 5px;
+    font-size: 20px;
+    line-height: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0.70;
+}
+.flexdatalist-multiple li.value span.fdl-remove:hover {
+    opacity: 1;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 9px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #cedddd;
+    border-bottom-right-radius: 4px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #839496;
+  }
