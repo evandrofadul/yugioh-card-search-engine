@@ -55,7 +55,7 @@
 
             if (isset($_REQUEST['search']))
             {
-                $url = 'http://localhost/cardinfo.php?name=' . urlencode($_REQUEST['search']);
+                $url = 'https://yugioh-card-search-engine.herokuapp.com/cardinfo.php?name=' . urlencode($_REQUEST['search']);
                 $url_headers = @get_headers($url);
             
                 if(strpos($url_headers[0],'200'))
