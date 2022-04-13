@@ -10,7 +10,7 @@ $name = '';
 if ($_REQUEST) {
     foreach ($data['data'] as $item) {
         if ($item['name'] == $_REQUEST['name']) {
-            $name = $item['name'];
+            $name = $item;
             break;
         }
     }
