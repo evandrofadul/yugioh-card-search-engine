@@ -3,15 +3,13 @@ require_once('misc/header.php');
 ?>
 
 <body>
-    <div class="container-xxl">
-        <a href="https://yugioh-card-search-engine.herokuapp.com/"><img src="assets/images/logo.svg" class="mx-auto d-block" style="padding: 4% 0 30px" /></a>
 
-        <!-- BOTÃO PARA GERAR CARTAS ALEATÓRIAS
-        <div class="d-grid col-1 mx-auto">
-            <form method="get">
-                <button type="submit" name="card" value="Random" class="btn btn-success btn-lg">Aleatório</button>
-            </form>
-        </div> -->
+    <div class="container-xxl">
+        <a href="https://yugioh-card-search-engine.herokuapp.com/"><img src="assets/images/logo.svg" class="mx-auto d-block" style="padding-top: 3%" /></a>
+
+        <form method="get">
+            <center><button type="submit" name="card" value="Random" class="btn btn-dark btn" style="margin: 18px auto 20px auto">Gerar Carta Aleatória</button></center>
+        </form>
 
         <form class="row justify-content-md-center align-items-center" method="get">
             <div class="col-4">
@@ -31,7 +29,7 @@ require_once('misc/header.php');
 
             echo strpos($url_headers[0], '200') ? cardInfo($url) : cardNotFound();
         } elseif (isset($_REQUEST['card'])) {
-            randomCard();
+            echo randomCard();
         }
         ?>
 
