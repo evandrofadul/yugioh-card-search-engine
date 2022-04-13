@@ -1,11 +1,7 @@
 <?php
 
-function cardInfo($url)
+function displayCard($data)
 {
-    $json = file_get_contents($url);
-    $data = json_decode($json, true);
-    
-    
     $card = '<div class="row"><div class="col-5"><center><img src="' . $data['card_images'][0]['image_url'] . '" class="carta"></center></div><div class="col-5" style="margin-bottom: 60px">';
     
     if (isset($data['attribute']))
@@ -29,9 +25,23 @@ function cardInfo($url)
     }
 
     return $card;
-    
 }
 
+function cardInfo($url)
+{
+    $json = file_get_contents($url);
+    $data = json_decode($json, true);
+    
+    return displayCard($data);
+}
+
+function randomCard()
+{
+    $random = file_get_contents('https://yugioh-card-search-engine.herokuapp.com/cardinfo.php');
+    $data = json_decode($random, true);
+    
+    return displayCard($data);
+}
 
 function cardNotFound() {
     return '
@@ -39,28 +49,4 @@ function cardNotFound() {
             Nenhuma carta encontrada.
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>';
-}
-
-function randomCard()
-{
-    $random = file_get_contents('http://localhost/yugioh-SearchCards/cardinfo.php');
-    $item = json_decode($random);
-    $image = $item->card_images;
-
-    echo $item->name . '<br/>';
-    echo $item->type . '<br/>';
-    echo $item->desc . '<br/>';
-
-    if (isset($item->atk))
-    {
-        echo 'ATK: ' . $item->atk . '<br/>';
-    }
-    if (isset($item->def))
-    {
-        echo 'DEF: ' . $item->def . '<br/>';
-    }
-    foreach ($image as $img)
-    {
-        echo '<img src="' . $img->image_url . '" width="250px">';
-    }
 }
