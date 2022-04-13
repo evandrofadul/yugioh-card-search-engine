@@ -4,33 +4,41 @@ function cardInfo($url)
 {
     $json = file_get_contents($url);
     $data = json_decode($json, true);
-
-    foreach($data['card_images'] as $img)
-    {                  
-        echo '<div class="row"><div class="col-5"><center><img src="' . $img['image_url'] . '" class="carta"></center></div><div class="col-5" style="margin-bottom: 60px">';
-        break;                 
-    }
-
+    
+    
+    $card = '<div class="row"><div class="col-5"><center><img src="' . $data['card_images'][0]['image_url'] . '" class="carta"></center></div><div class="col-5" style="margin-bottom: 60px">';
+    
     if (isset($data['attribute']))
     {
-        echo '<img src="assets/images/atributos/' . $data['attribute'] . '.png"' . 'id="atributo" />';
+        $card .= '<img src="assets/images/atributos/' . $data['attribute'] . '.png"' . 'id="atributo" />';
     }
 
-    echo '<h2><span class="badge bg-dark">' . $data['name'] . '</span>' . '</h2>';
+    $card .= '<h2><span class="badge bg-dark">' . $data['name'] . '</span>' . '</h2>';
 
     if (isset($data['level']))
     {
-        echo '<img src="assets/images/stars/stars_' . $data['level'] . '.png"' . 'id="star" />';
+        $card .= '<img src="assets/images/stars/stars_' . $data['level'] . '.png"' . 'id="star" />';
     }
     
-    echo '<hr/><h5>[' . $data['race'] . '/' . $data['type'] . ']</h5>';
-    echo '<p>' . $data['desc'] . '</p>';
+    $card .= '<hr/><h5>[' . $data['race'] . '/' . $data['type'] . ']</h5>';
+    $card .= '<p>' . $data['desc'] . '</p>';
     
     if (isset($data['atk']) && isset($data['def']))
     {
-        echo '<h5><ol class="breadcrumb">ATK / ' . $data['atk'] . '&emsp;DEF / ' . $data['def'] . '</ol></h5></div></div>';
+        $card .= '<h5><ol class="breadcrumb">ATK / ' . $data['atk'] . '&emsp;DEF / ' . $data['def'] . '</ol></h5></div></div>';
     }
+
+    return $card;
     
+}
+
+
+function cardNotFound() {
+    return '
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            Nenhuma carta encontrada.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>';
 }
 
 function randomCard()
